@@ -70,7 +70,8 @@ app.get('/weather', (req, res) => {
             }
             
             res.send({
-                forecast: forecastData,
+                forecast: forecastData.forecast,
+                weatherImg: forecastData.imageSrc,
                 location,
                 address
             })

@@ -5,6 +5,7 @@ const messageTwo = document.querySelector('#message-2')
 
 
 
+
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -21,10 +22,13 @@ weatherForm.addEventListener('submit', (e) => {
             console.log(data.Error)
             messageOne.textContent = data.Error            
         } else {
+            const weatherPic = document.createElement('img')
             console.log(data.location)
             console.log(data.forecast)
             messageOne.textContent = data.location
             messageTwo.textContent = data.forecast
+            weatherPic.src = data.weatherImg
+            document.querySelector('#weatherpic').appendChild(weatherPic)
         }
         
     })
